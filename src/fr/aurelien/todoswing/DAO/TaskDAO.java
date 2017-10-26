@@ -104,7 +104,7 @@ public class TaskDAO implements DAOInterface<Task_entity , TaskDAO >{
 
     @Override
     public TaskDAO getAllTaskData() throws SQLException {
-        String sql = "SELECT todo_id,todo_task,todo_id_categorie,todo_urgent,todo_executed "
+        String sql = "SELECT todo_id,todo_task,categorie.categorie_name,todo_urgent,todo_executed "
                 + "FROM `todo_list` "
                 + "INNER JOIN categorie "
                 + "ON todo_list.todo_id_categorie = categorie.categorie_id";

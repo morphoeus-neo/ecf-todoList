@@ -161,22 +161,15 @@ public class MainTodoswingFrame extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Id", "Taches", "Catégorie", "Urgent", "Fait"
+                "Taches", "Catégorie", "Urgent", "Fait"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, true, true, true, true
+                java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         taskTable.setRowHeight(25);
@@ -187,11 +180,10 @@ public class MainTodoswingFrame extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(taskTable);
         if (taskTable.getColumnModel().getColumnCount() > 0) {
-            taskTable.getColumnModel().getColumn(0).setResizable(false);
-            taskTable.getColumnModel().getColumn(1).setPreferredWidth(350);
-            taskTable.getColumnModel().getColumn(2).setPreferredWidth(100);
+            taskTable.getColumnModel().getColumn(0).setPreferredWidth(350);
+            taskTable.getColumnModel().getColumn(1).setPreferredWidth(100);
+            taskTable.getColumnModel().getColumn(2).setMaxWidth(70);
             taskTable.getColumnModel().getColumn(3).setMaxWidth(70);
-            taskTable.getColumnModel().getColumn(4).setMaxWidth(70);
         }
 
         newTaskTextField.setColumns(20);
